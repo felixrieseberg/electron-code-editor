@@ -4,6 +4,7 @@
 
 const loader = require('./node_modules/monaco-editor/min/vs/loader.js')
 const FileManager = require('./filemanager.js')
+const {remote} = require('electron')
 
 loader.require.config({
   baseUrl: encodeURI(`file://${__dirname}/node_modules/monaco-editor/min`)
@@ -21,4 +22,5 @@ loader.require(['vs/editor/editor.main'], () => {
   })
 
   let fileManager = new FileManager({editor})
+  remote.getCurrentWindow().show()
 })
