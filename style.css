@@ -5,8 +5,17 @@ body {
 }
 
 #container {
-  height: 100vh;
+  height: calc(100vh - 40px);
   width: 100vw;
+}
+
+#titlebar {
+  width: 100vw;
+  height: 40px;
+  background-color: #1e1e1e;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-app-region: drag;
 }
 
 .monaco-editor {
