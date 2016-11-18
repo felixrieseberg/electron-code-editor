@@ -7,6 +7,7 @@ class FileManager {
 
     // When we receive a 'open-file' message, open the file
     ipcRenderer.on('open-file', (e, url) => this.openFile(url))
+    ipcRenderer.on('save-file', (e) => this.saveFile())
   }
 
   openFile(url) {
@@ -15,7 +16,22 @@ class FileManager {
 
     fs.readFile(url, 'utf-8', (err, data) => {
       this.editor.setModel(monaco.editor.createModel(data, 'javascript'))
+      this.lastUrl = url
     })
+  }
+
+  saveFile() {
+    if (this.lastUrl) {
+      let data = ''
+      let model = this.editor.getModel()
+
+      model._lines.forEach((line) => {
+        console.log(line)
+        data += line.text + model._EOL
+      })
+
+      fs.writeFile(this.lastUrl, data, 'utf-8')
+    }
   }
 }
 
