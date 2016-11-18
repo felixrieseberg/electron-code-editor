@@ -3,6 +3,7 @@
 // All of the Node.js APIs are available in this process.
 
 const loader = require('./node_modules/monaco-editor/min/vs/loader.js')
+const FileManager = require('./filemanager.js')
 
 loader.require.config({
   baseUrl: encodeURI(`file://${__dirname}/node_modules/monaco-editor/min`)
@@ -18,4 +19,6 @@ loader.require(['vs/editor/editor.main'], () => {
     theme: 'vs-dark',
     automaticLayout: true
   })
+
+  let fileManager = new FileManager({editor})
 })
