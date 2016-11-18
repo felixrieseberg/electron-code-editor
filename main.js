@@ -1,6 +1,7 @@
 const {app, BrowserWindow} = require('electron')
 const path = require('path')
 const url = require('url')
+const setupMenu = require('./menu.js')
 
 let mainWindow
 
@@ -24,4 +25,5 @@ function setupFileDrop() {
 app.on('ready', () => {
   createWindow()
   setupFileDrop()
+  setupMenu()
 })
