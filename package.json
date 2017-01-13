@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "electron": "^1.4.7",
-    "monaco-editor": "^0.7.0"
+    "monaco-editor": "^0.7.0",
+    "electron-default-menu": "^1.0.0"
   }
 }
