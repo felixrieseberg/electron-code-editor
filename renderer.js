@@ -1,4 +1,5 @@
 const loader = require('monaco-loader')
+const FileManager = require('./filemanager')
 
 loader().then(monaco => {
   let editor = monaco.editor.create(document.getElementById('container'), {
@@ -6,4 +7,6 @@ loader().then(monaco => {
     theme: 'vs-dark',
     automaticLayout: true
   })
+
+  let fileManager = new FileManager({editor})
 })
