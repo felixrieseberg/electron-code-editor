@@ -1,5 +1,6 @@
 const loader = require('monaco-loader')
 const FileManager = require('./filemanager')
+const {remote} = require('electron')
 
 loader().then(monaco => {
   let editor = monaco.editor.create(document.getElementById('container'), {
@@ -9,4 +10,6 @@ loader().then(monaco => {
   })
 
   let fileManager = new FileManager({editor})
+
+  remote.getCurrentWindow().show()
 })
