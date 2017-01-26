@@ -13,3 +13,12 @@ body {
   height: 100%;
   width: 100%;
 }
+
+#titlebar {
+  width: 100vw;
+  height: 40px;
+  background-color: #1e1e1e;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-app-region: drag;
+}

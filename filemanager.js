@@ -5,8 +5,6 @@ class FileManager {
   constructor({editor}) {
     this.editor = editor
 
-    console.log(editor)
-
     // When we receive a 'open-file' message, open the file
     ipcRenderer.on('open-file', (e, url) => this.openFile(url))
   }
