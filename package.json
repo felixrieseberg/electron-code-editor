@@ -16,7 +16,8 @@
         "start",
         "tutorial",
         "demo"
-    ],    "author": "Felix Rieseberg <felix@felixrieseberg.com>",
+    ],
+    "author": "Felix Rieseberg <felix@felixrieseberg.com>",
     "license": "MIT",
     "config": {
         "forge": {
@@ -56,6 +57,7 @@
         "babel-plugin-transform-async-to-generator": "^6.22.0",
         "babel-preset-env": "^1.1.10",
         "babel-preset-react": "^6.23.0",
+        "electron-forge": "^3.0.5",
         "electron-prebuilt-compile": "1.4.15",
         "eslint": "^3.16.1",
         "eslint-config-airbnb": "^14.1.0",
